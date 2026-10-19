@@ -18,3 +18,21 @@ for i in range(size):
 print("\n--- Results ---")
 print("Sequence:", sequence)
 print("Array:", array)
+
+
+#Requirement 2 - Reading Numbers from a File
+
+filename = input("\nEnter the text file name: ")
+
+try:
+    with open(filename, "r") as file:
+        content = file.read()
+        file_numbers = [float(number) for number in content.split()]
+
+    print("Numbers read from file:", file_numbers)
+
+except FileNotFoundError:
+    print("Error: The file does not exist.")
+
+except ValueError:
+    print("Error: The file contains invalid numbers.")
